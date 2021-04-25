@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, redirect, request, jsonify, make_response
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from werkzeug.exceptions import abort
@@ -162,4 +164,5 @@ def abort_if_news_not_found(news_id):
 
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
