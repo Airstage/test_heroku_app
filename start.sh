@@ -8,10 +8,8 @@ export PYTHONUNBUFFERED=true
 
 # Install Python 3 virtual env
 VIRTUALENV=./venv
+python3 -m venv $VIRTUALENV
 
-if [ ! -d $VIRTUALENV ]; then
-  python3 -m venv $VIRTUALENV
-fi
 
 # Install pip into virtual environment
 if [ ! -f $VIRTUALENV/bin/pip ]; then
